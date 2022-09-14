@@ -1,18 +1,17 @@
 #include <stdio.h>
 #include <math.h>
-float calculardelta(float b, float a, float c){
+float calculardelta(float a, float b, float c){
     float delta = 0;
     delta = pow(b,2) - 4 *a *c;
     return delta;
 }
 
-float raizes(float delta, float b, float a, float c){
+void raizes(float delta, float a, float b, float c){
     float raiz1 = 0;
     float raiz2 = 0;
-    float delta2 = 0;
-    delta2 = calculardelta(b,a,c);
-    raiz1 = (-b+sqrt(delta2))/(2*a);
-    raiz2 = (-b-sqrt(delta2))/(2*a);
+    delta = calculardelta(a,b,c);
+    raiz1 = (-b+sqrt(delta))/(2*a);
+    raiz2 = (-b-sqrt(delta))/(2*a);
     
     printf("Raiz1 = %f\n", raiz1);
     printf("Raiz2 = %f\n", raiz2);
@@ -30,21 +29,21 @@ int main()
     scanf("%f", &b);
     scanf("%f", &c);
     
-    delta1 = calculardelta(b,a,c);
+    delta = calculardelta(a,b,c);
 
-    printf("Delta: %f\n", delta1);
+    printf("Delta: %f\n", delta);
     
-    if ( delta1 > 0) {
+    if ( delta > 0) {
         printf("A equacao tera 2 raizes reais e diferentes\n");
+        raizes(delta,a,b,c);
     }
-    if ( delta1 == 0) {
+    if ( delta == 0) {
         printf("A equacao tera 2 raizes reais e iguais\n");
+        raizes(delta,a,b,c);
     }
-    if ( delta1 < 0) {
+    if ( delta < 0) {
         printf("A equacao nao possui raizes reais\n");
     }
-    
-    raizes(delta,b,a,c);
     
     return 0;
 }
