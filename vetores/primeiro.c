@@ -17,7 +17,7 @@ float calcular_media(int n, int vetor[]){
 int imprimir_abaixo_media( int vetor[], int n, float media){
 	int i;
 	
-		printf("Valores abaixo da media: \n");
+	printf("Valores abaixo da media: \n");
 	
 	for( i = 0; i < n; i++){
 		if(vetor[i] < media){
