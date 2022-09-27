@@ -6,12 +6,11 @@ int main(){
 
     int i, j;
     int C[5][5];
-    int soma_linha1 = 0, soma_linha2 = 0,  soma_linha3 = 0, soma_linha4 = 0, soma_linha5 = 0;
     int soma_linha[5] = {0};
+    int soma_coluna[5] = {0};
     int maior_soma = -999999;
     int menor_soma = 999999;
     
-
     srand (time(NULL));
 
     for(i = 0; i < 5; i++){
@@ -25,7 +24,7 @@ int main(){
         for(j = 0; j < 5; j++){
             soma_linha[i] += C[i][j];
         }
-            printf("Soma linha %d = %d\n", i + 1, soma_linha[i]);
+            printf("Soma linha %d = %d\n", i + 1, soma_linha[i]);     
     }
     for(i = 0; i < 5; i++){
         if(soma_linha[i] < menor_soma){
@@ -33,6 +32,17 @@ int main(){
             printf("A linha com a menor soma eh a linha %d\n", i + 1);
         }
     }
-
+    for(j = 0; j < 5; j++){
+        for(i = 0; i < 5; i++){
+            soma_coluna[j] += C[i][j];
+        }
+            printf("Soma Coluna %d = %d\n", j + 1, soma_coluna[j]);
+    }
+    for(j = 0; j < 5; j++){
+        if(soma_coluna[j] > maior_soma){
+            maior_soma = soma_coluna[j];
+            printf("A coluna com a maior soma eh a coluna %d\n", j + 1);
+        }
+    }
     return 0;
-} // IMCOMPLETO
+} // imprimindo mais do que o necessario
