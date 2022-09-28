@@ -4,7 +4,7 @@
 
 int main(){
 
-    int i, j;
+    int i, j, i_menor, j_maior;
     int C[5][5];
     int soma_linha[5] = {0};
     int soma_coluna[5] = {0};
@@ -29,9 +29,11 @@ int main(){
     for(i = 0; i < 5; i++){
         if(soma_linha[i] < menor_soma){
             menor_soma = soma_linha[i];
-            printf("A linha com a menor soma eh a linha %d\n", i + 1);
+            i_menor = i;
         }
     }
+    printf("A linha com a menor soma eh a linha %d\n", i_menor + 1);
+    
     for(j = 0; j < 5; j++){
         for(i = 0; i < 5; i++){
             soma_coluna[j] += C[i][j];
@@ -41,8 +43,9 @@ int main(){
     for(j = 0; j < 5; j++){
         if(soma_coluna[j] > maior_soma){
             maior_soma = soma_coluna[j];
-            printf("A coluna com a maior soma eh a coluna %d\n", j + 1);
+            j_maior = j;
         }
     }
+    printf("A coluna com a maior soma eh a coluna %d\n", j_maior + 1);
     return 0;
-} // imprimindo mais do que o necessario
+}
