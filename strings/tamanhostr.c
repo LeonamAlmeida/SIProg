@@ -12,13 +12,14 @@ int main(){
 
     printf("%d\n", contador);
 
+    int contador2 = 0;
     // ou + longo
 
-        while(valor[contador] != '\0'){
-        contador++;
+        while(valor[contador2] != '\0'){
+        contador2++;
     }
 
-    printf("%d\n", contador);
+    printf("%d\n", contador2);
 
     return 0;
 }
