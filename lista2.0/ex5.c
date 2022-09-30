@@ -20,12 +20,12 @@ void calcula_media(float nota1[], float nota2[], float media[]){
     int i;
 
     for( i = 0; i < 10; i++){
-        media[i] = ( nota1[i] + nota2[i])/2;
+        media[i] = (nota1[i] + nota2[i])/2;
     }
 
 }
 
-void imprimir(float nota1[], float nota2[], float media[], int aluno[]){
+void imprimir(float nota1[], float nota2[], float media[]){
 
     int i;
 
@@ -42,11 +42,10 @@ int main(){
 
     float nota1[10], nota2[10];
     float media[10];
-    int aluno[10];
 
     recebe_notas(nota1, nota2);
     calcula_media(nota1, nota2, media);
-    imprimir(nota1, nota2, media, aluno);
+    imprimir(nota1, nota2, media);
 
     return 0;
     
