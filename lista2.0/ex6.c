@@ -16,7 +16,6 @@ void strinv(char str[]){
 int main(){
 
     char str[51];
-    int inicio;
 
     printf("Digite a string:\n");
     gets(str);
@@ -24,7 +23,6 @@ int main(){
     strinv(str);
 
     printf("%s", str);
-
 
     return 0;
 }
