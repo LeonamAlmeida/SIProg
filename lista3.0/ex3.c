@@ -32,7 +32,6 @@ int main(){
         scanf("%d", &vet[i]);
         eh_multiplo(vet[i], x, &resp);
         printf("resp: %d\n", resp);
-
     }
 
     return 0;
