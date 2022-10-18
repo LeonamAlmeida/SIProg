@@ -27,8 +27,9 @@ int main(){
 
     vet = (int *) calloc(tam, sizeof(int));
 
+    printf("Digite os %d numeros\n", tam);
+    
     for(i = 0; i < tam; i ++){
-        printf("Digite os %d numeros\n", tam);
         scanf("%d", &vet[i]);
         eh_multiplo(vet[i], x, &resp);
         printf("resp: %d\n", resp);
