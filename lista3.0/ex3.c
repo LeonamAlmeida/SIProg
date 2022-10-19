@@ -1,3 +1,8 @@
+//Crie um programa que leia um número inteiro x e um número inteiro y. Em seguida, o programa deve ler y
+//números inteiros em um vetor vet alocado dinamicamente. O programa deve imprimir os y números lidos,
+//informando se cada número é, ou não, múltiplo do número x. Deve-se utilizar um procedimento auxiliar com a
+//assinatura void eh_multiplo(int a, int b, int ∗resp) que armazene em (∗resp) o valor 1, caso a seja
+//múltiplo de b, e 0, caso contrário.
 #include <stdio.h>
 #include <stdlib.h>
 
