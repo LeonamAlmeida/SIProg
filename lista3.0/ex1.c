@@ -1,3 +1,7 @@
+//Crie uma função recursiva que procure um valor em um vetor e retorne o índice do elemento, caso ele exista
+//no vetor, ou -1 caso, caso contrário. Crie a função main() para ler os números, invocar a função e imprimir o
+//resultado.
+    
 #include <stdio.h>
 
 int retorna_indice(int vet[], int indice, int x, int tam)
