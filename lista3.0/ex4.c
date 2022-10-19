@@ -2,59 +2,64 @@
 #include <stdlib.h>     
 #include <time.h> 
 
-void leitura_matriz(){
-
-    srand(time(NULL));
-
-    int n, i, j;
-
-    printf("Informe a dimensão da matriz:\n");
-    scanf("%d", &n);
-
-    int matriz[n][n];
-
-    for(i = 0; i < n; i++){
-        for(j = 0; j < n; j++){
-            matriz[i][j] = rand () % 11;
-            printf("%d\t", matriz[i][j]);
-        }   
-        printf("\n");
-    }   
-}
-
-void multiplicar_escalar(int n, int matriz[n][n]){
-
-    int i, j, c;
-
-    printf("Informe o escalar para multiplicar a matriz:\n");
-    scanf("%d", &c);
-
-    for(i = 0; i < n; i++){
-        for(j = 0; j < n; j++){
-            matriz[n][n] = c * matriz[i][j]; 
-        }
-    }
-}
-
-void imprimir_matriz(int n, int matriz[n][n]){
-
+void leitura(int tam, int escalar)
+{   
     int i, j;
 
-    for(i = 0; i < n; i++){
-        for(j = 0; j < n; j++){
-            printf("%d\t", matriz[n][n]);
+    printf("Informe o tamanho da matriz quadrada:\n");
+    scanf("%d", &tam);
+
+    int **matriz;
+
+    matriz = malloc(tam * sizeof(int*));
+
+    for(i = 0; i < tam; i++)
+    {
+        matriz[i] = malloc(tam * sizeof(int));
+        for(j = 0; j < tam; j++)
+        {
+            matriz[i][j] = rand () % 11;
+            printf("%d\t", matriz[i][j]);
+        }   printf("\n");
+    }
+    printf("Digite o inteiro para multiplicar a matriz:\n");
+    scanf("%d", escalar);
+}
+
+void calculo_produto_escalar(int tam, int escalar, int **matriz)
+{
+    int i, j;
+
+    for(i = 0; i < tam; i++)
+    {
+        for(j = 0; j < tam; j++)
+        {
+            matriz[i][j] *= escalar;
         }
-        printf("\n");
     }
 }
 
-int main(){ 
+void imprimir_matriz(int tam, int **matriz)
+{
+    int i, j;
 
-    int c, n;
-    int matriz[n][n];
-    leitura_matriz();
-    multiplicar_escalar(n, matriz);
-    imprimir_matriz(n, matriz);
+    for(i = 0; i < tam; i++)
+    {
+        for(j = 0; j < tam; j++)
+        {
+            printf("%d\t", matriz[i][j]);
+        }   printf("\n");
+    }
+}
+
+int main()
+{ 
+    srand(time(NULL));
+    int tam, escalar;
+    int **matriz;
+    leitura(tam, escalar);
+    calculo_produto_escalar(tam, escalar, matriz);
+    imprimir_matriz(tam, matriz);
 
     return 0;
-} // n multiplica pelo escalar
+}
