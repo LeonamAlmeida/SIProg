@@ -23,7 +23,7 @@ int main()
     printf("Tamanho do vetor:\n");
     scanf("%d", &tam);
     int vet[tam];
-    printf("NUmero a ser procurado:\n");
+    printf("Numero a ser procurado:\n");
     scanf("%d", &x);
     printf("Digite os elementos do vetor:\n");
 
