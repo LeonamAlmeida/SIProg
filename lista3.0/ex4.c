@@ -2,16 +2,14 @@
 #include <stdlib.h>     
 #include <time.h> 
 
-void leitura(int tam, int escalar)
+void leitura(int tam, int escalar, int **matriz)
 {   
     int i, j;
 
     printf("Informe o tamanho da matriz quadrada:\n");
     scanf("%d", &tam);
 
-    int **matriz;
-
-    matriz = malloc(tam * sizeof(int*));
+    matriz = (int **) malloc(tam * sizeof(int*));
 
     for(i = 0; i < tam; i++)
     {
@@ -55,9 +53,8 @@ void imprimir_matriz(int tam, int **matriz)
 int main()
 { 
     srand(time(NULL));
-    int tam, escalar;
-    int **matriz;
-    leitura(tam, escalar);
+    int tam, escalar, matriz;
+    leitura(tam, escalar, matriz);
     calculo_produto_escalar(tam, escalar, matriz);
     imprimir_matriz(tam, matriz);
 
