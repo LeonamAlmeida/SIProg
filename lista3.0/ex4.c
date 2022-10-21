@@ -1,33 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>     
-#include <time.h> 
 
-void leitura(int tam, int escalar, int **matriz)
+void leitura(int tam, int **matriz)
 {   
     int i, j;
 
-    printf("Informe o tamanho da matriz quadrada:\n");
-    scanf("%d", &tam);
-
-    matriz = (int **) malloc(tam * sizeof(int*));
-
     for(i = 0; i < tam; i++)
     {
-        matriz[i] = malloc(tam * sizeof(int));
         for(j = 0; j < tam; j++)
         {
-            matriz[i][j] = rand () % 11;
-            printf("%d\t", matriz[i][j]);
-        }   printf("\n");
+            printf("Digite [%d][%d]", i+1, j+1);
+            scanf("%d", &matriz[i][j]);
+        }   
     }
-    printf("Digite o inteiro para multiplicar a matriz:\n");
-    scanf("%d", escalar);
 }
 
-void calculo_produto_escalar(int tam, int escalar, int **matriz)
+void calculo_produto_escalar(int *tam, int escalar, int **matriz)
 {
     int i, j;
-
     for(i = 0; i < tam; i++)
     {
         for(j = 0; j < tam; j++)
@@ -37,10 +27,9 @@ void calculo_produto_escalar(int tam, int escalar, int **matriz)
     }
 }
 
-void imprimir_matriz(int tam, int **matriz)
+void imprimir_matriz(int *tam, int **matriz)
 {
     int i, j;
-
     for(i = 0; i < tam; i++)
     {
         for(j = 0; j < tam; j++)
@@ -52,9 +41,24 @@ void imprimir_matriz(int tam, int **matriz)
 
 int main()
 { 
-    srand(time(NULL));
-    int tam, escalar, matriz;
-    leitura(tam, escalar, matriz);
+    int tam, i, j;
+    int escalar;
+    int **matriz;
+    printf("Informe o tamanho da matriz quadrada:\n");
+    scanf("%d", &tam);
+
+    matriz = (int **) malloc(tam * sizeof(int));
+
+    for(i = 0; i < tam; i++)
+    {
+        matriz[i] = (int *) malloc(tam * sizeof(int));
+    }
+
+    leitura(tam, matriz);
+
+    printf("Digite o inteiro para multiplicar a matriz:\n");
+    scanf("%d", &escalar);
+
     calculo_produto_escalar(tam, escalar, matriz);
     imprimir_matriz(tam, matriz);
 
