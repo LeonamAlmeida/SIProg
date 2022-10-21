@@ -1,3 +1,12 @@
+//Crie um programa que permita ao usuário cadastrar os dados de uma turma com um número n de discentes
+//determinado pelo usuário. Os dados deverão ser armazenados em uma variável do tipo Aluno. Para isso
+//você deverá criar um registro chamado Aluno que conterá os seguintes dados: nome, curso, idade, data de
+//nascimento (estrutura chamada Data com dia, mês e ano), notas (armazenadas em um vetor de double
+//contendo 3 elementos). Depois de realizado o cadastro, os dados dos discentes deverão ser exibidos de maneira
+//organizada na tela. Antes de exibir os dados dos discentes cadastrados, calcule o coeficiente dele fazendo uma
+//média ponderada das notas de cada uma das provas, sendo o peso delas: 2 para a primeira prova, 3 para a
+//segunda prova e 4 para a terceira prova.
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -27,7 +36,6 @@ int main()
     printf("Digite o número de discentes:\n");
     scanf("%d", &n);
 
-    int soma[n];
     float media[n];
     struct Aluno aluno[n];
 
@@ -54,7 +62,6 @@ int main()
         scanf("%lf", &aluno[i].resultados.nota[1]);
         scanf("%lf", &aluno[i].resultados.nota[2]);
 
-        soma[i] =  aluno[i].resultados.nota[0] + aluno[i].resultados.nota[1] + aluno[i].resultados.nota[2];
         media[i] = (2 * aluno[i].resultados.nota[0] + 3 * aluno[i].resultados.nota[1] + 4 * aluno[i].resultados.nota[2])/9;
     }
 
