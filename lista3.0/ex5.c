@@ -10,13 +10,12 @@ struct coordenadas
     int x,y;
 };
 
-struct coordenadas ponto_origem;
-    x = 0;
-    y = 0;
-
 int main()
 {
     struct coordenadas ponto1;
+    struct coordenadas ponto_origem;
+        ponto_origem.x = 0;
+        ponto_origem.y = 0;
 
     float distancia;
 
@@ -30,4 +29,4 @@ int main()
     printf("A distancia entre o ponto digitado e a origem eh de: %f\n", distancia);
     
     return 0;
-}   
+}     
