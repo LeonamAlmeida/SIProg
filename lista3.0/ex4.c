@@ -1,3 +1,8 @@
+//Crie um programa que crie dinamicamente uma matriz quadrada de inteiros com tamanho informado pelo
+//usuário e leia um inteiro informado pelo usuário. Seu programa deve calcular o produto escalar entre o número
+//e a matriz informada, em uma nova matriz, e imprimir o resultado. Utilize procedimentos para leitura da
+//matriz, cálculo do produto escalar e impressão das matrizes.
+
 #include <stdio.h>
 #include <stdlib.h>     
 
