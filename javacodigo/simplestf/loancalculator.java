@@ -18,3 +18,20 @@ public class Program
 		System.out.println(remaining_amount);
 	}
 }
+
+/*
+import java.util.Scanner;
+
+public class Program
+{
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int amount = scanner.nextInt();
+		int i;
+		for(i = 0; i < 3; i++){
+			amount -= amount / 10;
+		}
+		System.out.println(amount);
+	}
+}
+*/
