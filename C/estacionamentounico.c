@@ -2,34 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
+void Bicicleta(int tempo, int tempo_suporte, float valor, float valor_total_desconto, float valor_total){
 
-int main(){
-
-    setlocale(LC_ALL, "Portuguese");
-    int h_inicial, min_inicial;
-    int h_final, min_final;
-    int tempo, tempo_suporte, i;
-    int horas, minutos;
-    char tipo_veiculo[51];
-    float valor = 0;
-    float valor_total = 0, valor_total_desconto = 0;
-
-    printf("Informe a hora inicial: \n");
-    scanf("%d %d", &h_inicial,&min_inicial);
-    printf("Informe a hora final: \n");
-    scanf("%d %d", &h_final, &min_final);
-    printf("Tipo de veiculo (bicicleta, moto, carro, van, caminhao): \n");
-    setbuf(stdin, NULL);
-    gets(tipo_veiculo);
-
-    tempo = ((h_final*60) + min_final) - ((h_inicial*60) + min_inicial);
-    horas = tempo/60;
-    minutos = tempo % 60;
-    printf("Tempo de uso: %dh:%dmin\n", horas, minutos);
-    tempo_suporte = tempo;
-
-    if(strcmp(tipo_veiculo,"bicicleta") == 0){
-
+    int i;
     for(i = 1; i <= 24; i++){
         if((tempo/60) == i){
             valor = valor + (0.50*i);
@@ -59,9 +34,10 @@ int main(){
     }else{
         printf("Sem desconto em menos de 2 horas de uso!");
     }
-    }
-    else if(strcmp(tipo_veiculo,"moto") == 0){
+}
+void Moto(int tempo, int tempo_suporte, float valor, float valor_total_desconto, float valor_total){
 
+    int i;
     for(i = 1; i <= 24; i++){
         if((tempo/60) == i){
             valor = valor + (2*i);
@@ -91,9 +67,10 @@ int main(){
     }else{
         printf("Sem desconto em menos de 2 horas de uso!");
     }
-    }
-    if(strcmp(tipo_veiculo,"carro") == 0){
+}
+void Carro(int tempo, int tempo_suporte, float valor, float valor_total_desconto, float valor_total){
 
+    int i;
     for(i = 1; i <= 24; i++){
         if((tempo/60) == i){
             valor = valor + (5*i);
@@ -123,9 +100,10 @@ int main(){
     }else{
         printf("Sem desconto em menos de 2 horas de uso!");
     }
-    }
-    if(strcmp(tipo_veiculo,"van") == 0){
+}
+void Van(int tempo, int tempo_suporte, float valor, float valor_total_desconto, float valor_total){
 
+    int i;
     for(i = 1; i <= 24; i++){
         if((tempo/60) == i){
             valor = valor + (8*i);
@@ -155,9 +133,10 @@ int main(){
     }else{
         printf("Sem desconto em menos de 2 horas de uso!");
     }
-    }
-    if(strcmp(tipo_veiculo,"caminhao") == 0){
+}
+void Caminhao(int tempo, int tempo_suporte, float valor, float valor_total_desconto, float valor_total){
 
+    int i;
     for(i = 1; i <= 24; i++){
         if((tempo/60) == i){
             valor = valor + (12*i);
@@ -187,9 +166,48 @@ int main(){
     }else{
         printf("Sem desconto em menos de 2 horas de uso!");
     }
+}
+int main(){
+
+    setlocale(LC_ALL, "Portuguese");
+    int h_inicial, min_inicial;
+    int h_final, min_final;
+    int tempo, tempo_suporte, i;
+    int horas, minutos;
+    char tipo_veiculo[51];
+    float valor = 0;
+    float valor_total = 0, valor_total_desconto = 0;
+
+    printf("Informe a hora inicial: \n");
+    scanf("%d %d", &h_inicial,&min_inicial);
+    printf("Informe a hora final: \n");
+    scanf("%d %d", &h_final, &min_final);
+    printf("Tipo de veiculo (bicicleta, moto, carro, van, caminhao): \n");
+    setbuf(stdin, NULL);
+    gets(tipo_veiculo);
+
+    tempo = ((h_final*60) + min_final) - ((h_inicial*60) + min_inicial);
+    horas = tempo/60;
+    minutos = tempo % 60;
+    printf("Tempo de uso: %dh:%dmin\n", horas, minutos);
+    tempo_suporte = tempo;
+
+    if(strcmp(tipo_veiculo,"bicicleta") == 0){
+        Bicicleta(tempo, tempo_suporte, valor, valor_total_desconto, valor_total);
+    }
+
+    else if(strcmp(tipo_veiculo,"moto") == 0){
+        Moto(tempo, tempo_suporte, valor, valor_total_desconto, valor_total);
+    }
+    else if(strcmp(tipo_veiculo,"carro") == 0){
+        Carro(tempo, tempo_suporte, valor, valor_total_desconto, valor_total);
+    }
+    else if(strcmp(tipo_veiculo,"van") == 0){
+        Van(tempo, tempo_suporte, valor, valor_total_desconto, valor_total);
+    }
+    else if(strcmp(tipo_veiculo,"caminhao") == 0){
+        Caminhao(tempo, tempo_suporte, valor, valor_total_desconto, valor_total);
     }
 
     return 0;
-
     }
-
