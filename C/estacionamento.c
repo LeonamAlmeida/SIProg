@@ -32,7 +32,7 @@ void Bicicleta(int tempo, int tempo_suporte, float valor, float valor_total_desc
         valor_total_desconto += (float)(valor/10)*9;
         printf("Valor total com desconto: R$%.2f\n", valor_total_desconto);
     }else{
-        printf("Sem desconto em menos de 2 horas de uso!");
+        printf("Sem desconto em menos de 2 horas de uso!\n");
     }
 }
 void Moto(int tempo, int tempo_suporte, float valor, float valor_total_desconto, float valor_total){
@@ -65,7 +65,7 @@ void Moto(int tempo, int tempo_suporte, float valor, float valor_total_desconto,
         valor_total_desconto += (float)(valor/20)*19;
         printf("Valor total com desconto: R$%.2f\n", valor_total_desconto);
     }else{
-        printf("Sem desconto em menos de 2 horas de uso!");
+        printf("Sem desconto em menos de 2 horas de uso!\n");
     }
 }
 void Carro(int tempo, int tempo_suporte, float valor, float valor_total_desconto, float valor_total){
@@ -98,7 +98,7 @@ void Carro(int tempo, int tempo_suporte, float valor, float valor_total_desconto
         valor_total_desconto += (float)(valor/100)*97;
         printf("Valor total com desconto: R$%.2f\n", valor_total_desconto);
     }else{
-        printf("Sem desconto em menos de 2 horas de uso!");
+        printf("Sem desconto em menos de 2 horas de uso!\n");
     }
 }
 void Van(int tempo, int tempo_suporte, float valor, float valor_total_desconto, float valor_total){
@@ -131,7 +131,7 @@ void Van(int tempo, int tempo_suporte, float valor, float valor_total_desconto, 
         valor_total_desconto += (float)(valor/100)*98;
         printf("Valor total com desconto: R$%.2f\n", valor_total_desconto);
     }else{
-        printf("Sem desconto em menos de 2 horas de uso!");
+        printf("Sem desconto em menos de 2 horas de uso!\n");
     }
 }
 void Caminhao(int tempo, int tempo_suporte, float valor, float valor_total_desconto, float valor_total){
@@ -164,7 +164,7 @@ void Caminhao(int tempo, int tempo_suporte, float valor, float valor_total_desco
         valor_total_desconto += (float)(valor/100)*99;
         printf("Valor total com desconto: R$%.2f\n", valor_total_desconto);
     }else{
-        printf("Sem desconto em menos de 2 horas de uso!");
+        printf("Sem desconto em menos de 2 horas de uso!\n");
     }
 }
 int main(){
@@ -177,7 +177,12 @@ int main(){
     char tipo_veiculo[51];
     float valor = 0;
     float valor_total = 0, valor_total_desconto = 0;
+    int n_veiculos;
 
+    printf("Digite o número de veículos:\n");
+    scanf("%d", &n_veiculos);
+
+    for(i = 0; i < n_veiculos; i++){
     printf("Informe a hora inicial: \n");
     scanf("%d %d", &h_inicial,&min_inicial);
     printf("Informe a hora final: \n");
@@ -208,6 +213,6 @@ int main(){
     else if(strcmp(tipo_veiculo,"caminhao") == 0){
         Caminhao(tempo, tempo_suporte, valor, valor_total_desconto, valor_total);
     }
-
+    }
     return 0;
     }
